@@ -74,9 +74,7 @@ function state = mkpe_embedding_train(K_c, K_x, K_z, parameters)
                 KE_c = exp(-DE_c / sigma_e^2);
                 DE_x = pdist2(E_x_new, E_x_new).^2;
                 KE_x = exp(-DE_x / sigma_e^2);
-                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c ...
-                                + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x ...
-                                + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
+                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
                 if objective(end) - objective_new >= gamma_x * E_x_gradient_norm
                     gamma_x = 2 * gamma_x;
                 else
@@ -91,9 +89,7 @@ function state = mkpe_embedding_train(K_c, K_x, K_z, parameters)
                 KE_c = exp(-DE_c / sigma_e^2);
                 DE_x = pdist2(E_x_new, E_x_new).^2;
                 KE_x = exp(-DE_x / sigma_e^2);
-                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c ...
-                                + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x ...
-                                + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
+                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
                 if objective(end) - objective_new < 0.5 * gamma_x * E_x_gradient_norm
                     gamma_x = 0.5 * gamma_x;
                 else
@@ -146,9 +142,7 @@ function state = mkpe_embedding_train(K_c, K_x, K_z, parameters)
                 KE_c = exp(-DE_c / sigma_e^2);
                 DE_z = pdist2(E_z_new, E_z_new).^2;
                 KE_z = exp(-DE_z / sigma_e^2);
-                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c ...
-                                + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x ...
-                                + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
+                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
                 if objective(end) - objective_new >= gamma_z * E_z_gradient_norm
                     gamma_z = 2 * gamma_z;
                 else
@@ -163,9 +157,7 @@ function state = mkpe_embedding_train(K_c, K_x, K_z, parameters)
                 KE_c = exp(-DE_c / sigma_e^2);
                 DE_z = pdist2(E_z_new, E_z_new).^2;
                 KE_z = exp(-DE_z / sigma_e^2);
-                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c ...
-                                + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x ...
-                                + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
+                objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
                 if objective(end) - objective_new < 0.5 * gamma_z * E_z_gradient_norm
                     gamma_z = 0.5 * gamma_z;
                 else
@@ -209,9 +201,7 @@ function state = mkpe_embedding_train(K_c, K_x, K_z, parameters)
                     KE_c = exp(-DE_c / sigma_e_new^2);
                     KE_x = exp(-DE_x / sigma_e_new^2);
                     KE_z = exp(-DE_z / sigma_e_new^2);
-                    objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c ...
-                                    + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x ...
-                                    + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
+                    objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
                     if objective(end) - objective_new >= gamma_eta * eta_gradient_norm
                         gamma_eta = 2 * gamma_eta;
                     else
@@ -224,9 +214,7 @@ function state = mkpe_embedding_train(K_c, K_x, K_z, parameters)
                     KE_c = exp(-DE_c / sigma_e_new^2);
                     KE_x = exp(-DE_x / sigma_e_new^2);
                     KE_z = exp(-DE_z / sigma_e_new^2);
-                    objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c ...
-                                    + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x ...
-                                    + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
+                    objective_new = lambda_c * sum(sum((KE_c(indices_c) - K_c(indices_c)).^2)) / count_c + lambda_x * sum(sum((KE_x(indices_x) - K_x(indices_x)).^2)) / count_x + lambda_z * sum(sum((KE_z(indices_z) - K_z(indices_z)).^2)) / count_z;
                     if objective(end) - objective_new < 0.5 * gamma_eta * eta_gradient_norm
                         gamma_eta = 0.5 * gamma_eta;
                     else
