@@ -1,4 +1,4 @@
-This package contains Matlab implementations of the algorithms proposed in "Embedding Heterogeneous Data by Preserving Multiple Kernels", which is appearing in ECAI 2014.
+This repository contains Matlab implementations of the algorithms proposed in "Embedding Heterogeneous Data by Preserving Multiple Kernels", which is appearing in the Proceedings of the 21st European Conference on Artificial Intelligence (ECAI 2014).
 
 demo_embedding.m file shows how to use the embedding algorithm.
 demo_projection.m file shows how to use the algorithm for out-of-sample projection.
@@ -9,6 +9,6 @@ MKPE methods
 * mkpe_projection_train.m => training procedure for out-of-sample projection
 * mkpe_projection_test.m => test procedure for out-of-sample projection
 
-If you use any of the algorithms implemented in this package, please cite the following paper:
+If you use any of the algorithms implemented in this repository, please cite the following paper:
 
 Mehmet Gonen. Embedding Heterogeneous Data by Preserving Multiple Kernels. Proceedings of the 21st European Conference on Artificial Intelligence (ECAI 2014), Prague, Czech Republic, 2014.
