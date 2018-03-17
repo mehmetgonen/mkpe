@@ -1,5 +1,3 @@
-% Mehmet Gonen (mehmet.gonen@gmail.com)
-
 function state = mkpe_projection_train(K_c, K_x, K_z, X, Z, parameters)
     rand('state', parameters.seed); %#ok<RAND>
     randn('state', parameters.seed); %#ok<RAND>
